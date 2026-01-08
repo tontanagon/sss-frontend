@@ -14,6 +14,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       async authorize(credentials, req) {
         if (!credentials?.email || !credentials?.password) return null;
+        console.log("API_BASE_URL =", process.env.API_BASE_URL);
 
         try {
           const res = await fetch(`${process.env.API_BASE_URL}/api/login`, {
