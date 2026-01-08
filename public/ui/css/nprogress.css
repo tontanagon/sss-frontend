@@ -1,0 +1,23 @@
+/* nprogress.css */
+#nprogress {
+  /* display: none; */
+  pointer-events: none;
+}
+
+/* #nprogress .bar {
+  background: #0055ca;
+  height: 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+} */
+
+/* #nprogress .peg {
+  box-shadow: 0 0 10px #0055ca, 0 0 5px #0055ca; 
+}
+
+#nprogress .spinner {
+  display: none;
+} */

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: sss
+data:
+  NODE_ENV: "production"
+  API_BASE_URL: "http://sss-api:8000"
+  NEXTAUTH_URL: "https://sss-frontend.mininggarden.com"
+  AUTH_TRUST_HOST: "https://sss-frontend.mininggarden.com"

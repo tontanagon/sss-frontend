@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  sss-frontend:
+    container_name: sss-frontend
+    image: node:24.3.0
+    restart: always
+    command: "tail -F anything"
+    volumes:
+      - "./public:/app"
+    ports:
+      - ${PUBLIC_PORT}:3000
+    networks:
+      - sss
+
+networks:
+  sss:
+    name: sss

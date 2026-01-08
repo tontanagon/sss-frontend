@@ -1,0 +1,92 @@
+@media (max-width: 768px) {
+  .responsive-list-table {
+    thead {
+      display: none !important;
+    }
+
+    tbody,
+    tr,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    .hidden-activity-name {
+      display: none;
+    }
+
+    tr {
+      position: relative;
+      background: #f7f7ff;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1rem;
+      padding: 1.7rem 1rem 1.2rem 1rem;
+    }
+
+    td {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0.4rem 0;
+      border: none !important;
+    }
+
+    td::before {
+      content: attr(data-label);
+      flex: 0 0 120px;
+      font-weight: 600;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    /* -------------------- */
+    /* ย้ายสถานะขึ้นขวาบน */
+    /* -------------------- */
+    td[data-label="สถานะ"] {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.8rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+    }
+
+    td[data-label="สถานะ"]::before {
+      content: none; /* ไม่ต้องโชว์ label */
+    }
+
+    /* -------------------- */
+    /*  ย้ายปุ่มไปท้ายสุด       */
+    /* -------------------- */
+    td[data-label="รายละเอียด"] {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+    }
+
+    td[data-label="รายละเอียด"]::before {
+      content: none; /* ไม่ต้องโชว์ label */
+    }
+
+    /* -------------------- */
+    /*  checkbox in admin   */
+    /* -------------------- */
+
+    td[data-label="checkbox"] {
+      /* position: absolute;
+      top: 0.6rem;
+      left: 0.8rem; */
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0;
+    }
+
+    td[data-label="checkbox"]::before {
+      content: none; /* ไม่ต้องโชว์ label */
+    }
+  }
+}
