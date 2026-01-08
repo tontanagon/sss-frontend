@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 import ModalCheck from "@/ui/layout/modal-check";
 import { useCartStore } from "@/store/cartStore";
 import { ApiResponse } from "@/Interfaces/response";
-import { useRouter } from 'nextjs-toploader/app'; 
+import { useRouter } from "nextjs-toploader/app";
 import { submitBooking } from "@/actions/booking";
 import { useSession } from "next-auth/react";
 
@@ -275,7 +275,7 @@ export default function MyModal() {
 
                 {session?.user.role.includes("Teacher") ? (
                   <></>
-                ) : (
+                ) : teacherOption.length > 0 ? (
                   <Field>
                     <Label className="sm:text-lg text-base font-medium text-black">
                       อาจารย์ <span className="text-[#DD0000]">*</span>
@@ -340,6 +340,8 @@ export default function MyModal() {
                       }}
                     />
                   </Field>
+                ) : (
+                  <></>
                 )}
                 <Field>
                   <Label className="sm:text-lg text-base font-medium text-black">
