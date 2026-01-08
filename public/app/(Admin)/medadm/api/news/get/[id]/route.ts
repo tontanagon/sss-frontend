@@ -11,7 +11,7 @@ export async function GET(
 
     
 
-    const res = await fetchWrapper(`${process.env.API_BASE_URL}/api/categories/get/${id}`, {
+    const res = await fetchWrapper(`${process.env.API_BASE_URL}/api/news/get/${id}`, {
         headers: {
             Authorization: `Bearer ${session?.user.token}`,
         }

@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
 
     
 
-    const res = await fetchWrapper(`${process.env.API_BASE_URL}/api/role-manager/delete/${params.id}`, {
+       const res = await fetchWrapper(`${process.env.API_BASE_URL}/api/news-categories/delete/${params.id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" , Authorization: `Bearer ${session?.user.token}`  },
     });

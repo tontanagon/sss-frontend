@@ -7,21 +7,24 @@ export async function GET(request: NextRequest) {
     const session = await auth();
     const searchParams = new URL(request.url).searchParams;
 
-    const query = {
-        category: searchParams.get("category"),
-        teacher: searchParams.get("teacher"),
-        subject: searchParams.get("subject"),
-        fromDate: searchParams.get("fromDate"),
-        toDate: searchParams.get("toDate"),
-    };
+        // Build query string safely
+        const params = new URLSearchParams();
+        if (searchParams.get("category")) params.append("category", searchParams.get("category")!);
+        if (searchParams.get("teacher")) params.append("teacher", searchParams.get("teacher")!);
+        if (searchParams.get("subject")) params.append("subject", searchParams.get("subject")!);
+        if (searchParams.get("fromDate")) params.append("fromDate", searchParams.get("fromDate")!);
+        if (searchParams.get("toDate")) params.append("toDate", searchParams.get("toDate")!);
+        params.append("type", searchParams.get("type") || "excel");
 
-    const res = await fetch(`${process.env.API_BASE_URL}/api/products/export/xlsx?category=${query.category}&teacher=${query.teacher}&subject=${query.subject}&fromDate=${query.fromDate}&toDate=${query.toDate}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${session?.user.token}`,
-        },
-    });
+        const res = await fetch(`${process.env.API_BASE_URL}/api/products/export/xlsx?${params.toString()}`,
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${session?.user.token}`,
+                },
+            }
+        );
     
     if (!res.ok) {
         return new NextResponse("Failed to download", { status: res.status });
