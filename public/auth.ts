@@ -27,6 +27,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           });
 
           if (!res.ok) {
+            console.log("Login failed:", res.status);
+            console.log("Login failed:", await res.json());
+            
             return null;
           }
 
