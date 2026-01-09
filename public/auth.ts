@@ -95,7 +95,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       if (account?.provider === "google") {
         try {
-          log("Google account access token:", account.access_token);
+          console.log("Google account access token:", account.access_token);
           const res = await fetch(`${process.env.API_BASE_URL}/api/login-with-google`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
