@@ -108,7 +108,7 @@ export default function FormLogin() {
             <hr />
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-1">
             <MicrosoftLogin />
             <GoogleLogin />
             {/* <p className="mt-5 text-center text-sm/6 text-gray-500">
