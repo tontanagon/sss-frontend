@@ -9,21 +9,21 @@ export async function middleware(request: NextRequest) {
   console.log(session);
   
 
-  // if (!session?.user && pathname !== "/login" && pathname !== "/register" && pathname !== "/") {
-  //   return NextResponse.redirect(new URL("/login", request.url));
-  // }
+  if (!session?.user && pathname !== "/login" && pathname !== "/register" && pathname !== "/") {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
 
-  // if (session?.user && (pathname === "/login" || pathname === "/register")) {
-  //   return NextResponse.redirect(new URL("/", request.url));
-  // }
+  if (session?.user && (pathname === "/login" || pathname === "/register")) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
 
-  // if (pathname.startsWith('/medadm') && !session?.user.role.includes('Administrator')) {
-  //   return NextResponse.redirect(new URL("/", request.url));
-  // }
+  if (pathname.startsWith('/medadm') && !session?.user.role.includes('Administrator')) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
 
-  // if (pathname.startsWith('/medtch') && !role?.includes('Teacher')) {
-  //   return NextResponse.redirect(new URL('/', request.url));
-  // }
+  if (pathname.startsWith('/medtch') && !role?.includes('Teacher')) {
+    return NextResponse.redirect(new URL('/', request.url));
+  }
 
   return NextResponse.next();
 }
