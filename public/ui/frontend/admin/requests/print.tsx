@@ -93,7 +93,7 @@ export default function Print() {
                       Smart Store <p className="text-[#9D76B3]">System</p>
                     </span>
                     <p className="text-[10px]">
-                      Faculty of Associated Medical Sciences
+                      Faculty of Computer Science
                     </p>
                   </div>
                 </div>

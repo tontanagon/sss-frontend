@@ -31,7 +31,7 @@ export default function Header() {
                 Smart Store <p className="text-[#9D76B3]">System</p>
               </span>
               <p className="md:text-[14px] sm:text-md text-[10px]">
-                Faculty of Associated Medical Sciences
+                Faculty of Computer Science
               </p>
             </div>
           </Link>

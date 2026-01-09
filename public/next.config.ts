@@ -26,6 +26,12 @@ const nextConfig: NextConfig = {
         port: '8000',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'sss-api',
+        port: '8000',
+        pathname: '/**',
+      },
     ],
   },
   reactStrictMode: false,

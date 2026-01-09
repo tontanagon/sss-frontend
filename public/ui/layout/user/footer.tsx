@@ -47,7 +47,7 @@ export default function Footer() {
                 Smart Store System
               </span>
               <p className="font-normal lg:text-[14px] md:text-sm ">
-                Faculty of Associated Medical Sciences
+                Faculty of Computer Science
               </p>
             </div>
           </div>
@@ -62,9 +62,9 @@ export default function Footer() {
             <p
               className={`lg:text-[14px]/8 md:text-[14px]/6 text-[10px]/6 ${ibmPlexSansThai.className}`}
             >
-              คณะเทคนิคการแพทย์ มหาวิทยาลัยเชียงใหม่
+              สาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยแม่โจ้
               <br />
-              110 ถนนอินทวโรรส ตำบลศรีภูมิ อำเภอเมือง จังหวัดเชียงใหม่ 50200
+              63 หมู่ 4 ตำบลหนองหาร อำเภอสันทราย จังหวัดเชียงใหม่ 50290
             </p>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { log } from "console";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
@@ -90,6 +91,35 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           }
         } catch (error) {
           console.error("Error in microsoft-entra-id callback:", error);
+        }
+      }
+
+      if (account?.provider === "google") {
+        try {
+          log("Google account access token:", account.access_token);
+          const res = await fetch(`${process.env.API_BASE_URL}/api/login-with-google`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              accessToken: account.access_token,
+            }),
+          });
+
+          if (res.ok) {
+            const users_fetch = await res.json();
+            token.id = users_fetch.user_info.id;
+            token.provider_id = users_fetch.user_info.provider_id;
+            token.email = users_fetch.user_info.email;
+            token.name = users_fetch.user_info.name;
+            token.user_code = users_fetch.user_info.user_code;
+            token.user_grade = users_fetch.user_info.user_grade;
+            token.accessToken = users_fetch.user_info.token;
+            token.role = users_fetch.user_info.role;
+          } else {
+            console.error("Failed google login fetch:", res.status);
+          }
+        } catch (error) {
+          console.error("Error in google callback:", error);
         }
       }
 

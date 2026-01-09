@@ -19,6 +19,7 @@ import covet_big from "@/public/icon/upload-cover-big.svg";
 import circle_info from "@/public/icon/info-circle.svg";
 
 import microsoft_icon from "@/public/icon/microsoft-icon.svg"
+import google_icon from "@/public/icon/google-icon.svg"
 
 
 export {
@@ -35,4 +36,5 @@ export {
     covet_big,
     circle_info,
     microsoft_icon,
+    google_icon,
 }

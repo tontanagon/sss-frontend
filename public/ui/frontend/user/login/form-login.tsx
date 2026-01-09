@@ -5,6 +5,7 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import MicrosoftLogin from "./microsoft-login-button";
 import { useRouter } from "nextjs-toploader/app";
+import GoogleLogin from "./google-login-button";
 
 export default function FormLogin() {
   const router = useRouter();
@@ -107,8 +108,9 @@ export default function FormLogin() {
             <hr />
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-3">
             <MicrosoftLogin />
+            <GoogleLogin />
             {/* <p className="mt-5 text-center text-sm/6 text-gray-500">
               No Have Account
               <Link
